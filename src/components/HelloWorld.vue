@@ -1,5 +1,5 @@
 <template>
-  <div class="hello bg-green-200">
+  <div class="hello bg-green-100">
     <h1>hey {{ msg }}</h1>
     <p>
       This is it

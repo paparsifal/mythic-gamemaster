@@ -14,4 +14,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+</style>
