@@ -1,24 +1,30 @@
 <template>
-  <h1 class="text-4xl text-center font-serif p-5">Mythic Game Master Tool</h1>
-  <div class="flex flex-wrap">
-    <boutton
-      v-for="bt in btList"
-      :key="bt.id"
-      :bt-name="bt.name"
-      @click="tirage(bt.proba)"
-    />
-  </div>
-  <div
-    class="text-xl text-center bg-gray-300 p-5"
-    :class="{
-      'bg-green-300': reponse == 'OUI',
-      'bg-red-300': reponse == 'NON',
-    }"
-  >
-    {{ reponse }}
-  </div>
-  <div class="font-mono font-thin p-2 bg-yellow-50">
-    <p v-for="(log, idx) in logTirage" :key="idx">{{ log }}</p>
+  <div class="p-2">
+    <h1 class="text-4xl text-center font-serif p-5 font-bold hero">
+      Mythic Game Master Tool
+    </h1>
+    <div class="flex flex-wrap">
+      <boutton
+        v-for="bt in btList"
+        :key="bt.id"
+        :bt-name="bt.name"
+        @click="tirage(bt.proba)"
+      />
+    </div>
+    <div
+      class="text-2xl text-center bg-gray-300 p-2 font-black"
+      :class="{
+        'bg-green-300': reponse == 'OUI',
+        'text-green-600': reponse == 'OUI',
+        'bg-red-300': reponse == 'NON',
+        'text-red-600': reponse == 'NON',
+      }"
+    >
+      {{ reponse }}
+    </div>
+    <div class="font-mono font-thin p-2 bg-yellow-50">
+      <p v-for="(log, idx) in logTirage" :key="idx">{{ log }}</p>
+    </div>
   </div>
 </template>
 
@@ -64,4 +70,8 @@ export default {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.hero {
+  background-color: #dfdbe5;
+  background-image: url("assets/topography.svg");
+}
 </style>
